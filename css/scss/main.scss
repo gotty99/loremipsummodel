@@ -1,0 +1,1030 @@
+$colors: ( user: #545454, hover: #bbbbbb, productName: #676767, price: #d70826, //red price tag //hidden promotion
+shadow: #f7f7f7, //hidden box shadow
+menuHover: #d3d3d3, //hidden link hover
+placeHolder: #747474, //form placeholder 
+);
+//function for colors
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+;
+$tablet: 768px;
+$mobile: 640px;
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+;
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+;
+//reset
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    @include tablet {
+        overflow-x: hidden;
+    }
+}
+
+//reset
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+//indent
+main,
+footer {
+    padding: 0 147px;
+    @include tablet {
+        padding: 0 34px;
+    }
+}
+
+.main-wrapper {
+    height: 100%;
+    width: 100%;
+    header {
+        position: relative;
+        .top-naw {
+            padding-top: 36px;
+            @include tablet {
+                padding-top: 15px;
+            }
+            @include mobile {
+                padding: 0;
+            }
+            .user {
+                display: flex;
+                justify-content: flex-end;
+                a {
+                    padding-right: 22px;
+                    color: color(user);
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    &:hover {
+                        color: color(hover);
+                    }
+                    @include tablet {
+                        padding-right: 15px;
+                        font-size: 11px;
+                    }
+                    @include mobile {
+                        display: none;
+                    }
+                }
+            }
+            .logo img {
+                margin: 0 auto;
+                display: block;
+                padding-top: 5px;
+                @include tablet {
+                    padding-top: 45px;
+                }
+                @include mobile {
+                    padding: 37px 0;
+                }
+            }
+            .link-wrapper {
+                @include mobile {
+                    display: none;
+                }
+            }
+            .links {
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 40px;
+                padding-bottom: 12px;
+                @include tablet {
+                    padding-bottom: 10px;
+                }
+                a {
+                    padding-right: 40px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                    letter-spacing: 3px;
+                    color: #000;
+                    text-shadow: 1px 0 1px #d4d4d4;
+                    padding-bottom: 28px;
+                    transition: border-color .9s ease;
+                    border-bottom: 1px solid #fff;
+                    &:hover {
+                        border-color: #000;
+                    }
+                    @include tablet {
+                        padding-right: 26px;
+                        padding-bottom: 12px;
+                    }
+                }
+            }
+        }
+    } //hidden dropdown
+    #hidden-menu {
+        height: 460px;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s ease;
+        .hidden-content {
+            width: 1024px;
+            height: 100%;
+            margin: 0 auto;
+            box-shadow: 0 -1px 5px color(shadow);
+            @include tablet {
+                width: 700px;
+                margin: 0 34px;
+                box-shadow: 0px 8px 19px -8px #a0a0a0, 0px -2px 14px -4px #a0a0a0;
+            }
+        }
+        .hidden-wrapper {
+            display: flex;
+            padding: 20px;
+            @include tablet {
+                padding: 44px 0 40px 0;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+                padding-bottom: 14px;
+                font-size: 12px;
+                @include tablet {
+                    padding-bottom: 12px;
+                }
+            }
+            a:hover {
+                color: color(menuHover);
+            }
+            .row1 {
+                .promo-red {
+                    color: color(price);
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    padding: 0;
+                    padding-bottom: 40px;
+                    @include tablet {
+                        padding-bottom: 38px;
+                    }
+                }
+                @include tablet {
+                    padding-left: 6px;
+                }
+            }
+            .row1,
+            .row2,
+            .row3,
+            .row4 {
+                width: 19%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                @include tablet {
+                    width: 25%;
+                }
+            }
+            .row2,
+            .row3,
+            .row4 {
+                padding-left: 30px;
+                @include tablet {
+                    padding: 0;
+                }
+            }
+            .row4 {
+                padding: 0;
+                .collction {
+                    padding-top: 12px;
+                }
+            }
+            .row5 {
+                width: 40%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                @include tablet {
+                    display: none;
+                }
+            }
+            .heading-word {
+                font-size: 10px;
+                font-weight: bolder;
+            }
+            .heading-word:hover {
+                color: #000;
+            }
+            .img-holder {
+                background-image: url(/images/promotion_03.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                height: 225px;
+                width: 310px;
+            }
+        }
+    }
+}
+
+//added with JS
+#hidden-menu.opend {
+    visibility: visible;
+    opacity: 1;
+}
+
+#opener.active {
+    border-color: #000;
+}
+
+.banner {
+    background-image: url(/images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include tablet {
+        height: 390px;
+    }
+    @include mobile {
+        height: 326px;
+        justify-content: flex-start;
+    }
+    span {
+        color: #fff;
+        display: block;
+    }
+    .l-span {
+        font-size: 124px;
+        letter-spacing: 18px;
+        text-transform: uppercase;
+        @include tablet {
+            font-size: 60px;
+            letter-spacing: 10px;
+            margin-top: 40px;
+        }
+        @include mobile {
+            font-size: 40px;
+            margin-top: 93px;
+            letter-spacing: 8px;
+            margin-bottom: 25px;
+        }
+    }
+    .s-span {
+        font-size: 35px;
+        letter-spacing: 6px;
+        margin-bottom: 18px;
+        @include tablet {
+            display: none;
+        }
+        @include mobile {
+            font-size: 24px;
+        }
+    }
+    .s-pan-t {
+        display: none;
+        @include tablet {
+            display: inline-block;
+            font-size: 16px;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            margin-top: -10px;
+        }
+        @include mobile {
+            font-size: 24px;
+            margin-bottom: 22px;
+            letter-spacing: 6px;
+        }
+    }
+    .l2-span {
+        font-size: 16px;
+        letter-spacing: 3px;
+        @include tablet {
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+        @include mobile {
+            font-size: 18px;
+        }
+    }
+}
+
+main {
+    height: auto;
+    width: auto;
+    .product {
+        height: 100%;
+        width: auto;
+        h2 {
+            padding-top: 34px;
+            padding-bottom: 22px;
+            font-size: 22px;
+            font-family: 'Lato light';
+            letter-spacing: 3px;
+            color: color(productName);
+            @include tablet {
+                padding: 18px 0;
+            }
+            @include mobile {
+                padding: 26px 0 16px 0;
+            }
+        }
+        .products {
+            width: 100%;
+            display: flex;
+            .img-wrapp {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                .large-img1 {
+                    background-image: url(/images/large.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    height: 580px;
+                    width: auto;
+                    margin-right: 12px;
+                    @include tablet {
+                        margin-right: 8px;
+                        height: 310px;
+                    }
+                    @include mobile {
+                        height: 252px;
+                    }
+                }
+                .large-img2 {
+                    background-image: url(/images/large2.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    height: 580px;
+                    width: auto;
+                    margin-right: 12px;
+                    @include tablet {
+                        margin-right: 8px;
+                        height: 310px;
+                    }
+                    @include mobile {
+                        height: 252px;
+                    }
+                }
+                .large-img3 {
+                    background-image: url(/images/large3.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    height: 580px;
+                    width: auto;
+                    margin-right: 12px;
+                    @include tablet {
+                        margin-right: 8px;
+                        height: 310px;
+                    }
+                    @include mobile {
+                        height: 252px;
+                    }
+                }
+                .span {
+                    display: inline-block;
+                }
+                .del {
+                    font-size: 12px;
+                    margin-top: -5px;
+                    @include mobile {
+                        font-size: 14px;
+                    }
+                }
+                .main-span {
+                    padding-top: 27px;
+                    text-transform: uppercase;
+                    color: color(productName);
+                    letter-spacing: 2px;
+                    font-size: 14px;
+                    font-family: 'Lato light';
+                    @include tablet {
+                        letter-spacing: 1px;
+                        padding-top: 14px;
+                    }
+                    @include mobile {
+                        font-size: 16px;
+                    }
+                }
+                .red-price {
+                    color: color(price);
+                    padding-left: 12px;
+                    font-size: 14px;
+                    @include mobile {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    article {
+        padding-top: 62px;
+        @include tablet {
+            padding-top: 30px;
+        }
+        @include mobile {
+            padding-top: 28px;
+        }
+        h3 {
+            font-size: 22px;
+            font-family: 'Lato light';
+            text-transform: uppercase;
+            padding-bottom: 39px;
+            @include tablet {
+                padding-bottom: 18px;
+            }
+            @include mobile {
+                padding-bottom: 32px;
+            }
+        }
+        p {
+            font-size: 14px;
+            line-height: 21px;
+            padding-bottom: 35px;
+        }
+        p:last-child {
+            padding: 0;
+        }
+        ul {
+            padding-left: 50px;
+            font-size: 14px;
+            padding-bottom: 35px;
+            @include tablet {
+                padding-left: 48px;
+            }
+            li {
+                padding-bottom: 10px;
+                list-style-type: disc;
+                span {
+                    position: relative;
+                    left: 10px;
+                    @include tablet {
+                        left: 0;
+                    }
+                }
+            }
+            li:last-child {
+                padding: 0;
+            }
+        }
+    }
+    .more-product {
+        h3 {
+            font-size: 22px;
+            font-family: 'Lato light';
+            text-transform: uppercase;
+            padding: 40px 0;
+            @include tablet {
+                padding: 25px 0 15px 0;
+            }
+            @include mobile {
+                padding: 30px 0 20px 0;
+            }
+        }
+        .item {
+            text-align: center;
+            text-transform: uppercase;
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            span {
+                display: block;
+                padding-top: 18px;
+                font-size: 14px;
+                letter-spacing: 2px;
+                @include tablet {
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                }
+                @include mobile {
+                    font-size: 18px;
+                }
+            }
+            :hover {
+                cursor: pointer;
+            }
+            img {
+                height: 360px;
+                width: 265px;
+                padding-right: 20px;
+                @include tablet {
+                    height: 200px;
+                    width: 155px;
+                    padding: 0;
+                    margin: 0;
+                }
+                @include mobile {
+                    height: 301px;
+                    width: 222px;
+                }
+            }
+        }
+    }
+    .carosel {
+        display: block;
+        .owl-nav.disabled {
+            display: block;
+            justify-content: space-between;
+            display: flex;
+            font-size: 40px;
+            :hover {
+                color: #000;
+                background: #fff;
+            }
+        }
+        .owl-dots {
+            display: none;
+        }
+        .owl-nav {
+            @include mobile {
+                justify-content: space-between;
+                display: flex;
+                margin: 0;
+                font-size: 30px;
+            }
+        }
+    }
+    .user-information {
+        margin-top: 40px;
+        display: flex;
+        @include tablet {
+            margin-top: 30px;
+        }
+        @include mobile {
+            margin-top: 26px;
+            flex-direction: column;
+        }
+        .left {
+            width: 40%;
+            height: 100%;
+            @include tablet {
+                width: 55%;
+            }
+            @include mobile {
+                width: 100%;
+            }
+            .form {
+                .req {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 20px;
+                    font-size: 10px;
+                    color: color(price);
+                    @include mobile {
+                        display: none;
+                    }
+                    span {
+                        font-size: 12px;
+                    }
+                }
+                .req-second {
+                    display: none;
+                    justify-content: flex-end;
+                    margin-right: 20px;
+                    font-size: 12px;
+                    color: color(price);
+                    @include mobile {
+                        display: flex;
+                    }
+                }
+                .label1 {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    padding-bottom: 21px;
+                    @include mobile {
+                        font-size: 16px;
+                    }
+                    span {
+                        font-family: 'Lato black';
+                        letter-spacing: 2px;
+                        @include tablet {
+                            letter-spacing: 1px;
+                        }
+                        span {
+                            font-size: 12px;
+                            color: color(price);
+                        }
+                    }
+                    input {
+                        width: 284px;
+                        color: color(placeHolder);
+                        font-size: 12px;
+                        padding: 8px;
+                        border: 1px solid #d2d2d2;
+                        border-radius: 3px;
+                        font-family: 'Lato Bold Italic';
+                        @include tablet {
+                            width: 250px;
+                        }
+                        @include mobile {
+                            width: 365px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+                legend {
+                    font-family: 'Lato black';
+                    font-size: 12px;
+                    letter-spacing: 3px;
+                    border-bottom: 1px solid #e5e5e5;
+                    padding-bottom: 10px;
+                    margin-bottom: 36px;
+                    @include tablet {
+                        padding-bottom: 8px;
+                    }
+                    @include mobile {
+                        font-size: 22px;
+                        padding-bottom: 10px;
+                        margin-bottom: 27px;
+                        letter-spacing: 6px;
+                    }
+                }
+                .radio {
+                    padding-left: 10px;
+                    font-size: 12px;
+                }
+                .upper {
+                    padding-bottom: 18px;
+                }
+                .lower {
+                    span {
+                        display: block;
+                    }
+                }
+                .label2 {
+                    font-family: 'Lato black';
+                    display: flex;
+                    align-items: flex-start;
+                    .radio {
+                        margin-top: 3px;
+                    }
+                    .under-text {
+                        font-family: 'Lato';
+                        padding-top: 3px;
+                        color: #787878;
+                    }
+                }
+                .button {
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: #fff;
+                    width: 100%;
+                    height: 30px;
+                    background-color: #000;
+                    border-radius: 4px;
+                    border: 1px solid black;
+                    margin-top: 28px;
+                    letter-spacing: 1px;
+                    @include mobile {
+                        font-size: 16px;
+                        height: 40px;
+                        letter-spacing: 2px;
+                    }
+                }
+                .button:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .right {
+            height: 100%;
+            width: 60%;
+            background-color: #eee;
+            margin-top: 22px;
+            margin-left: 28px;
+            @include tablet {
+                width: 45%;
+            }
+            @include mobile {
+                width: 100%;
+                margin-left: 0;
+            }
+            .right-wrapper {
+                padding: 28px;
+                @include tablet {
+                    padding: 16px 25px 5px 25px;
+                }
+                @include mobile {
+                    padding: 16px 19px 5px 19px;
+                }
+                h2 {
+                    font-size: 12px;
+                    font-family: 'Lato black';
+                    text-transform: uppercase;
+                    text-align: center;
+                    padding-bottom: 36px;
+                    letter-spacing: 3px;
+                    @include tablet {
+                        line-height: 1.5;
+                    }
+                    @include mobile {
+                        font-size: 16px;
+                        line-height: 0;
+                        padding-bottom: 34px;
+                    }
+                }
+                p {
+                    font-size: 12px;
+                    word-spacing: 3px;
+                    line-height: 14px;
+                    margin-bottom: 36px;
+                    @include tablet {
+                        line-height: 1.8;
+                    }
+                    @include mobile {
+                        font-size: 16px;
+                        line-height: 1.5;
+                    }
+                }
+                .tablet-v {
+                    @include tablet {
+                        margin: 0;
+                    }
+                }
+                p:last-child {
+                    margin: 0;
+                    @include tablet {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    border-top: 1px solid #e5e5e5;
+    margin-top: 36px;
+    @include tablet {
+        margin-top: 25px;
+    }
+    @include mobile {
+        border: none;
+        margin-top: 28px;
+    }
+    .footer-wrapper {
+        padding-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        @include tablet {
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        @include mobile {
+            flex-direction: column-reverse;
+            padding-bottom: 17px;
+        }
+        .break {
+            margin: 0 15px;
+            color: color(hover);
+            @include tablet {
+                margin: 0 21px;
+            }
+            @include mobile {
+                margin: 0 28px;
+            }
+        }
+        .footer-links {
+            margin-top: 22px;
+            transform: rotate(-1deg);
+            @include tablet {
+                transform: none;
+                margin-top: 18px;
+                text-align: center;
+            }
+            @include mobile {
+                text-align: left;
+                line-height: 1.3;
+                margin-top: 24px;
+            }
+            a {
+                text-transform: uppercase;
+                font-size: 8px;
+                color: color(hover);
+                text-decoration: none;
+                letter-spacing: 1px;
+                @include tablet {
+                    font-size: 11px;
+                }
+                @include mobile {
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                }
+            }
+            a:hover {
+                color: #000;
+            }
+        }
+        .subscription {
+            padding-top: 28px;
+            @include tablet {
+                padding-top: 24px;
+            }
+            @include mobile {
+                padding-top: 0;
+            }
+            form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .submit-span {
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    font-family: 'Lato black';
+                    display: block;
+                    text-align: center;
+                    letter-spacing: 3px;
+                    padding-bottom: 12px;
+                    @include tablet {
+                        font-size: 11px;
+                        padding-bottom: 24px;
+                    }
+                    @include mobile {
+                        font-size: 18px;
+                        letter-spacing: 7px;
+                    }
+                }
+            }
+            .label-wrapp {
+                display: flex;
+                @include mobile {
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                }
+                .e-mail {
+                    border: 1px solid #a0a0a0;
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                    border-right: none;
+                    padding: 6px;
+                    font-family: 'Lato Bold Italic';
+                    @include tablet {
+                        padding: 12px;
+                        border-color: #000;
+                        width: 220px;
+                    }
+                    @include mobile {
+                        padding: 16px 0 20px 29px;
+                        font-size: 22px;
+                        width: 327px;
+                    }
+                }
+                .submit {
+                    background-color: #000;
+                    border: 1px solid #000;
+                    border-top-right-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                    color: #fff;
+                    padding: 6px;
+                    font-size: 14px;
+                    @include tablet {
+                        padding: 13px;
+                        font-size: 12px;
+                    }
+                    @include mobile {
+                        font-size: 22px;
+                        margin: 0;
+                        padding: 18px;
+                    }
+                }
+                .submit:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+//Mobile version button for hidden menu
+#span-wraper {
+    height: 28px;
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    left: 36px;
+    top: 36px;
+    display: none;
+    .line {
+        width: 100%;
+        height: 3px;
+        background-color: black;
+    }
+    @include mobile {
+        display: flex;
+    }
+}
+
+#span-wraper:hover {
+    cursor: pointer;
+}
+
+//Mobile Menu
+//it will not show because JS is not applied
+//to see it just put display: block and on .main-wrapper put display: none
+#mobile-hidden {
+    min-height: 100%;
+    min-width: 100%;
+    padding: 30px 36px;
+    display: none;
+}
+
+.mobile-wrapper {
+    display: flex;
+    font-size: 29px;
+    background-color: #fff;
+    span {
+        display: block;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-weight: bold;
+        :hover {
+            cursor: pointer;
+        }
+    }
+    .mobile-links {
+        padding-left: 61px;
+        width: 100%;
+        position: relative;
+        .bolded {
+            font-weight: bold;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 30px;
+            display: block;
+        }
+        .dropping li a {
+            display: block;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e5e5e5;
+            text-transform: uppercase;
+        }
+        .dropping li ul li a {
+            border: none;
+            text-transform: capitalize;
+            margin-bottom: 40px;
+            padding: 0;
+        }
+        .dropping li ul {
+            margin-top: 36px;
+            display: none;
+            padding-left: 28px;
+        }
+        .dropping li:hover ul {
+            display: block;
+        }
+        .plus {
+            right: 5px;
+            position: absolute;
+            display: inline;
+            font-size: 30px;
+        }
+    }
+}

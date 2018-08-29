@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/css/reset.css">
+    <link rel="stylesheet" href="css/minified-css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/minified-css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/minified-css/minified.css">
+
+</head>
+
+<body>
+    <!-- Total page padding made with this wrapper -->
+    <div class="main-wrapper">
+        <header>
+            <!-- Navigation -->
+            <div class="top-naw">
+                <div class="user">
+                    <a href="#">login</a>
+                    <a href="#">contact</a>
+                </div>
+                <!-- made up "button" for mobile version for hidden menu -->
+                <span id="span-wraper">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </span>
+                <!--  -->
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="logo">
+                </div>
+                <div class="link-wrapper">
+                    <div class="links">
+                        <a href="#">New</a>
+                        <a href="#" id="opener" onclick="activation()">Women</a>
+                        <a href="#">kids</a>
+                        <a href="#">lookbook</a>
+                        <a href="#">BOUTIQUES</a>
+                        <a href="#">love life</a>
+                        <a href="#">promotions</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Hidden content on "women" link click -->
+            <div id="hidden-menu">
+                <div class="hidden-content">
+                    <div class="hidden-wrapper">
+                        <div class="row1">
+                            <a href="#" class="promo-red">promotions</a>
+                            <a href="#" class="heading-word">NEW</a>
+                        </div>
+                        <div class="row2">
+                            <a href="#" class="heading-word">CLOTHING</a>
+                            <a href="#">Dresses</a>
+                            <a href="#">Coats</a>
+                            <a href="#">Jackets</a>
+                            <a href="#">Leather</a>
+                            <a href="#">Cardigans and sweaters</a>
+                            <a href="#">Blouses and shirts</a>
+                            <a href="#">T-shirts and tops</a>
+                            <a href="#">Trousers</a>
+                            <a href="#">Jeans</a>
+                            <a href="#">Skirts</a>
+                            <a href="#">Shorts</a>
+                            <a href="#">Jumpsuits</a>
+                            <a href="#">Premium</a>
+                            <a href="#">Intimates</a>
+                            <a href="#">Sport</a>
+                            <a href="#">Essentials</a>
+                        </div>
+                        <div class="row3">
+                            <a href="#" class="heading-word">ACCESSORIES</a>
+                            <a href="#">Shoes</a>
+                            <a href="#">Bags</a>
+                            <a href="#">Jewellery</a>
+                            <a href="#">Leather goods</a>
+                            <a href="#">Belts</a>
+                            <a href="#">Hats and caps</a>
+                            <a href="#">Foulards and scarves</a>
+                            <a href="#">Gloves</a>
+                            <a href="#">Sunglasses</a>
+                            <a href="#">Other accessories</a>
+                        </div>
+                        <div class="row4">
+                            <a href="#" class="heading-word">OTHER BRANDS</a>
+                            <a href="#">Very me</a>
+                            <a href="#">Zoë Loveborn</a>
+                            <a href="#">Studio L</a>
+                            <a href="#">Karen Reese</a>
+                            <br>
+                            <a href="#" class="heading-word collction">Collections</a>
+                            <a href="#">City</a>
+                            <a href="#">Party</a>
+                            <a href="#">Summer</a>
+                            <a href="#">At the office</a>
+                        </div>
+                        <div class="row5">
+                            <div class="img-holder"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main picture as background -->
+        <div class="banner">
+            <span class="l-span">Lorem ipsum</span>
+            <br>
+            <!-- In Desktop version there is "sumer" but in tablet version is "summer" -->
+            <span class="s-span">sumer 17-18</span>
+            <!-- So i just code it as it is, if that isn't on purpose just delete this span and -->
+            <span class="s-pan-t">summer 17-18</span>
+            <span class="l2-span">Lorem ipsum dolor sit amet</span>
+        </div>
+
+        <!-- Main Part -->
+        <main>
+            <section class="product">
+                <h2>PRODUCTS</h2>
+                <div class="products">
+                    <div class="img-wrapp">
+                        <div class="large-img1"></div>
+                        <span class="main-span">Trensh coat</span>
+                        <br>
+                        <span class="del">
+                            <del>95,99 €</del>
+                            <span class="red-price">85,99 €</span>
+                        </span>
+                    </div>
+                    <div class="img-wrapp">
+                        <div class="large-img2"></div>
+                        <span class="main-span">DUFFLE COAT</span>
+                        <br>
+                        <span class="del">
+                            <del>55,99 €</del>
+                            <span class="red-price">45,99 €</span>
+                        </span>
+                    </div>
+                    <div class="img-wrapp">
+                        <div class="large-img3"></div>
+                        <span class="main-span">DUFFLE COAT</span>
+                        <br>
+                        <span class="del">
+                            <del>55,99 €</del>
+                            <span class="red-price">45,99 €</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- Info about products -->
+                <article>
+                    <h3>This is a title</h3>
+                    <p>
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+
+                    </p>
+                    <ul>
+                        <li>
+                            <span>At vero eos et accusamus et iusto odio dignissimos</span>
+                        </li>
+                        <li>
+                            <span>Nam libero tempore, cum soluta nobis est eligendi</span>
+                        </li>
+                        <li>
+                            <span>Nemo enim ipsam voluptatem quia voluptas</span>
+                        </li>
+                        <li>
+                            <span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</span>
+                        </li>
+                        <li>
+                            <span>Lorem ipsum dolor sit amet</span>
+                        </li>
+                    </ul>
+                    <p>
+
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+                        ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                        enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                        dolores eos qui ratione voluptatem sequi nesciunt.
+
+                    </p>
+                </article>
+            </section>
+
+            <!-- Part with carosel -->
+            <section class="more-product">
+                <h3>More PRODUCTS</h3>
+
+                <!-- Arrows are not same & in the place where it shuld be as shown in .PSD -->
+                <!-- it's jQuery, it will not work offline i suppose -->
+                <div class="carosel">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <img src="images/small.jpg" alt="smallimg">
+                            <span>Beige coat</span>
+                        </div>
+                        <div class="item">
+                            <img src="images/small3.jpg" alt="smallimg">
+                            <span>Grey coat</span>
+                        </div>
+                        <div class="item">
+                            <img src="images/small2.jpg" alt="smallimg">
+                            <span>red coat</span>
+                        </div>
+                        <div class="item">
+                            <img src="images/small4.jpg" alt="smallimg">
+                            <span>blue coat</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Information of user, Form -->
+            <section class="user-information">
+                <!-- Left Form part -->
+                <div class="left">
+                    <!-- Form Starts here -->
+                    <form action="#" class="form">
+                        <legend>LOGIN</legend>
+                        <label class="label1" for="firstName">
+                            <span>first Name
+                                <span>*</span>
+                            </span>
+                            <input type="text" name="name" id="firstName" placeholder="Enter your first name">
+                        </label>
+                        <!--  -->
+                        <label class="label1" for="lastName">
+                            <span>last name
+                                <span>*</span>
+                            </span>
+                            <input type="text" name="name" id="lastName" placeholder="Enter your last name">
+                        </label>
+                        <!--  -->
+                        <label class="label1" for="date">
+                            <span>date of birth
+                                <span>*</span>
+                            </span>
+                            <input type="text" id="date" placeholder="dd/mm/yyyy">
+                        </label>
+                        <!--  -->
+                        <label class="label1" for="eMail">
+                            <span>e-mail
+                                <span>*</span>
+                            </span>
+                            <input type="text" name="e-mail" id="eMail" placeholder="Enter your E-Mail address">
+                        </label>
+                        <!--  -->
+                        <label class="label1" for="password">
+                            <span>password
+                                <span>*</span>
+                            </span>
+                            <input type="password" name="password" id="password" placeholder="Enter your password">
+                        </label>
+                        <!--  -->
+                        <span class="req">
+                            <span>*</span> Required</span>
+                        <!-- mobile -->
+                        <span class="req-second">
+                            <span>*</span> Required field</span>
+                        <label class="label2 upper" for="radio1">
+                            <input type="radio" checked="checked" name="radio" id="radio1">
+                            <span class="radio">I am a returning customer</span>
+                        </label>
+                        <!--  -->
+                        <label class="label2 lower" for="radio">
+                            <input type="radio" name="radio" id="radio">
+                            <span class="radio">I am a new customer
+                                <span class="under-text">Creating an account is not mandatory</span>
+                            </span>
+                        </label>
+                        <!--  -->
+                        <button class="button">continue with purchase</button>
+                    </form>
+                </div>
+                <!-- Right Info part -->
+                <div class="right">
+                    <div class="right-wrapper">
+                        <h2>benefits of creating an account</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                            beatae vitae dicta sunt explicabo.
+                        </p>
+                        <p class="tablet-v">
+                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                            voluptatem sequi nesciunt.
+                        </p>
+                        <p>
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                            quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt
+                            in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer starts here -->
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-links">
+                    <a href="#">registered trademark Inc. All rights reserved</a>
+                    <span class="break">-</span>
+                    <a href="#">conditions</a>
+                    <span class="break">-</span>
+                    <a href="#">Privacy</a>
+                </div>
+                <!-- Footer form -->
+                <div class="subscription">
+                    <form action="#" class="form">
+                        <span class="submit-span">receive our newsletter</span>
+                        <div class="label-wrapp">
+                            <label for="e-mail">
+                                <input type="text" name="e-mail" id="e-mail" class="e-mail" placeholder="Enter your Email">
+                            </label>
+                            <label for="submit">
+                                <input type="submit" name="submit" id="submit" value="Go" class="submit">
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Mobile Hidden Menu -->
+    <!-- No JS applied -->
+    <div id="mobile-hidden">
+        <div class="mobile-wrapper">
+            <!-- this span onClick shuld open nav -->
+            <span>X</span>
+            <div class="mobile-links">
+                <ul>
+                    <li>
+                        <a href="#" class="bolded">New</a>
+                    </li>
+                    <li>
+                        <a href="#" class="bolded dropW">Women
+                            <span class="plus">+</span>
+                        </a>
+
+                        <ul class="dropping">
+                            <li>
+                                <a href="#">promotions
+                                    <span class="plus">+</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">new
+                                    <span class="plus">+</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">clothing
+                                    <span class="plus">+</span>
+                                </a>
+
+                                <ul>
+                                    <li>
+                                        <a href="#">Outfits</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tops</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sweaters</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dresses</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bottoms</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Jackets & c</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <a href="#">accessories
+                                    <span class="plus">+</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="">Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bags</a>
+                                        <li>
+                                            <a href="#">Jewellery</a>
+                                            <li>
+                                                <a href="#">Leather goods</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Belts</a>
+                                </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Other brands
+                                        <span class="plus">+</span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="">Very me</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Zoë Loveborn</a>
+                                            <li>
+                                                <a href="#">Studio L</a>
+                                                <li>
+                                                    <a href="#">Karen Reese</a>
+                                                </li>
+                                    </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Collections
+                                            <span class="plus">+</span>
+                                        </a>
+                                        <ul>
+                                            <li>
+                                                <a href="">City</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Party</a>
+                                                <li>
+                                                    <a href="#">Summer</a>
+                                                    <li>
+                                                        <a href="#">At the office</a>
+                                                    </li>
+                                        </ul>
+                                        </li>
+                        </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="js/main.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.js"></script>
+
+</body>
+
+</html>
